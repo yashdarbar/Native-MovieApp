@@ -1,9 +1,9 @@
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 export default function Search() {
     return (
         <View>
-            Search
+            <Text>Search</Text>
         </View>
-    )
+    );
 }
