@@ -19,7 +19,7 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
         [Query.equal("searchTerm", [query])],
     );
         // console.log(query)
-        console.log("resultss", results)
+        // console.log("resultss", results)
 
     if (results.documents.length > 0) {
         const existingMovie = results.documents[0];

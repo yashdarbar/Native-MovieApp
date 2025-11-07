@@ -22,9 +22,9 @@ export default function RootLayout() {
               />
               {/* <Stack.Screen name="index" /> */}
               <Stack.Screen
-                  name="movie/[id]"
+                  name="movies/[id]"
                   options={{
-                      headerShown: true,
+                      headerShown: false,
                   }}
               />
           </Stack>

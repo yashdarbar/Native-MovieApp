@@ -19,19 +19,19 @@ const TrendingCard = ({
                     resizeMode="cover"
                 />
                 <View className="absolute bottom-9 -lef-3.5 px-2 py-1 rounded-full">
-                    <MaskedView
-                        // maskElement={
-                        //     <Text className="font-bold text-white text-6xl">
-                        //         {index + 1}
-                        //     </Text>
-                        // }
+                    {/* <MaskedView
+                        maskElement={
+                            <Text className="font-bold text-white text-6xl">
+                                {index + 1}
+                            </Text>
+                        }
                     >
                         <Image
                             source={images.rankingGradient}
                             className="size-14"
                             resizeMode="cover"
                         />
-                    </MaskedView>
+                    </MaskedView> */}
                 </View>
             </TouchableOpacity>
         </Link>
