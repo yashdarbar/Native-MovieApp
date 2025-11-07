@@ -9,7 +9,7 @@ export const TMDB_CONFIG = {
 
 export const fetchMovies = async ({ query }: { query: string }) => {
     const endpoint = query
-        ? `${TMDB_CONFIG.BASE_URL}/search/movies?query=${encodeURIComponent(
+        ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(
               query
           )}`
         : `${TMDB_CONFIG.BASE_URL}/discover/movie`;
@@ -24,7 +24,7 @@ export const fetchMovies = async ({ query }: { query: string }) => {
     }
 
     const data = await response.json();
-    console.log("dafafa", data);
+    // console.log("dafafa", data);
     return data.results;
 };
 

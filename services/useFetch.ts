@@ -11,7 +11,7 @@ const useFetch = <T>(fetchFunction: () => Promise<T>, autoFetch = true) => {
             setError(null)
 
             const result = await fetchFunction();
-            console.log("DDDTTAA", result)
+            // console.log("DDDTTAA", result)
             setData(result);
         } catch (err) {
             setError(
