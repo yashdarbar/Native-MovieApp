@@ -32,21 +32,34 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
             }
         );
     } else {
-        await tablesDB.createDocument(
-            DATABASE_ID,
-            COLLECTION_ID,
-            ID.unique(),
-            {
-                searchTerm: query,
-                movie_id: movie.id,
-                title: movie.title,
-                count: 1,
-                poster_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-            }
-        )
+        await tablesDB.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), {
+            searchTerm: query,
+            movie_id: movie.id,
+            title: movie.title,
+            count: 1,
+            poster_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+        });
     }
     } catch (error) {
         console.error("Error updating search count:", error);
         throw error;
+    }
+}
+
+export const getTrendingMovies = async (): Promise<TrendingMovie[] | undefined> => {
+    try {
+        const result = await tablesDB.listDocuments(
+        DATABASE_ID,
+        COLLECTION_ID,
+        [
+            Query.limit(5),
+            Query.orderDesc("count"),
+        ]
+    );
+
+    return result.documents as unknown as TrendingMovie[];
+    } catch (error) {
+        console.error("Error while getting trending movies:", error)
+        return undefined;
     }
 }

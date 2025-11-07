@@ -3,10 +3,10 @@ import { View, TextInput, Image } from 'react-native'
 import { icons } from '@/constants/icons'
 
 interface SearchProps {
-    onPress: () => void;
+    onPress?: () => void;
     placeholder: string;
-    value: string;
-    onChangeText: (text: string) => void;
+    value?: string;
+    onChangeText?: (text: string) => void;
 }
 
 export default function SearchBar({onPress, placeholder, value, onChangeText}: SearchProps) {
